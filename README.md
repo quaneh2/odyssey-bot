@@ -2,6 +2,8 @@
 
 A web-based Retrieval-Augmented Generation (RAG) application that allows users to ask questions about Homer's *The Odyssey* and receive accurate, AI-powered answers with citations from the original text.
 
+**[Try the live demo](https://odyssey-bot-r0p3.onrender.com/)**
+
 ## Overview
 
 Ask The Odyssey combines modern AI technologies to create an interactive experience with classical literature. Users can ask natural language questions about characters, events, and themes in *The Odyssey*, and receive contextual answers backed by relevant passages from the epic.
