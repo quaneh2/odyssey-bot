@@ -137,23 +137,28 @@ def health():
     }), 200
 
 
-if __name__ == '__main__':
+# Initialize RAG engine at module level (runs in both development and production)
+print("=" * 60)
+print("Ask The Odyssey - Initializing Application")
+print("=" * 60)
+if not init_rag_engine():
+    error_msg = (
+        f"Failed to initialize RAG engine. "
+        f"ChromaDB not found at {CHROMA_DB_PATH}. "
+        f"Please run 'python setup.py' first to set up the database."
+    )
+    print(f"\n✗ ERROR: {error_msg}\n")
     print("=" * 60)
-    print("Ask The Odyssey - Flask Application")
+    raise RuntimeError(error_msg)
+
+print("✓ Application initialized successfully")
+print("=" * 60)
+
+
+if __name__ == '__main__':
+    print()
+    print("Starting Flask development server...")
+    print("Access the application at: http://localhost:5000")
     print("=" * 60)
     print()
-
-    # Initialize RAG engine
-    if init_rag_engine():
-        print()
-        print("Starting Flask server...")
-        print("Access the application at: http://localhost:5000")
-        print("=" * 60)
-        print()
-        app.run(debug=True, port=5000)
-    else:
-        print()
-        print("=" * 60)
-        print("Failed to start application.")
-        print("Please run 'python setup.py' first to set up the database.")
-        print("=" * 60)
+    app.run(debug=True, port=5000)
