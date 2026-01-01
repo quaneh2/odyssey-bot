@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask The Odyssey - AI-Powered Epic Explorer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ask The Odyssey</h1>
+            <p class="subtitle">Explore Homer's epic through AI-powered question answering</p>
+        </header>
+
+        <main>
+            <section class="query-section">
+                <textarea
+                    id="question-input"
+                    placeholder="Ask a question about The Odyssey..."
+                    rows="4"
+                ></textarea>
+                <button id="submit-btn" class="submit-button">Ask Question</button>
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <span>Processing your question...</span>
+                </div>
+            </section>
+
+            <section class="examples-section">
+                <h3>Example Questions:</h3>
+                <div class="example-questions">
+                    <button class="example-btn" data-question="What happened to Odysseus's crew?">
+                        What happened to Odysseus's crew?
+                    </button>
+                    <button class="example-btn" data-question="Who is Circe and what role does she play?">
+                        Who is Circe and what role does she play?
+                    </button>
+                    <button class="example-btn" data-question="Describe Odysseus's encounter with the Cyclops">
+                        Describe Odysseus's encounter with the Cyclops
+                    </button>
+                    <button class="example-btn" data-question="What is Penelope doing while Odysseus is away?">
+                        What is Penelope doing while Odysseus is away?
+                    </button>
+                    <button class="example-btn" data-question="How does The Odyssey end?">
+                        How does The Odyssey end?
+                    </button>
+                </div>
+            </section>
+
+            <section id="answer-section" class="answer-section hidden">
+                <div class="answer-container">
+                    <h3>Answer:</h3>
+                    <div id="answer-text" class="answer-text"></div>
+                </div>
+
+                <div class="sources-container">
+                    <h3>Sources from The Odyssey:</h3>
+                    <div id="sources" class="sources-grid"></div>
+                </div>
+            </section>
+
+            <section id="error-section" class="error-section hidden">
+                <div class="error-container">
+                    <h3>Error</h3>
+                    <p id="error-text"></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Source text from <a href="https://www.gutenberg.org" target="_blank">Project Gutenberg</a></p>
+            <p>Powered by Anthropic Claude, Voyage AI, and ChromaDB</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
