@@ -15,7 +15,7 @@ data/odyssey.txt
 data/chroma_db/
 
 # Notes
-project_spec.md
+specs/
 
 # IDE
 .vscode/
